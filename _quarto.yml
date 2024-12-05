@@ -1,0 +1,4 @@
+project:
+  type: website
+publish:
+  gh-pages: true
