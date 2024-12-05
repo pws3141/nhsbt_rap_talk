@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Required R Packages
         run: |
-          Rscript -e 'install.packages(c("knitr", "rmarkdown"), repos = "https://cran.rstudio.com")'
+          Rscript -e 'install.packages(c("knitr", "rmarkdown", "leaflet"), repos = "https://cran.rstudio.com")'
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
