@@ -2,3 +2,5 @@ project:
   type: website
 publish:
   gh-pages: true
+execute:
+  freeze: auto
