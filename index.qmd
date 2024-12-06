@@ -194,7 +194,7 @@ Key ideas of RAP:
 ![](fig/rap.png)
 :::
 
-## RAPping
+## That's not a RAP
 
 
 ::: {.fragment .semi-fade-out}
