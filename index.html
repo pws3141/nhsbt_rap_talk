@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-76d61f829f7edb33bfc3772ee4322d2e.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -141,7 +206,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#43464B" class="quarto-title-block center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">NHS R Conference</h1>
   <p class="subtitle">This is a subtitle</p>
 
@@ -164,9 +229,14 @@
 <h2>Some information</h2>
 <div class="column" style="width:60%;">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-2"><a></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span>  <span class="co"># Add default OpenStreetMap map tiles</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="sc">-</span><span class="fl">1.910510</span>, <span class="at">lat=</span><span class="fl">52.478062</span>, <span class="at">popup=</span><span class="st">"The ICC"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="sc">-</span><span class="fl">1.912550</span>, <span class="at">lat=</span><span class="fl">52.476551</span>, <span class="at">popup=</span><span class="st">"Leonardo Royal Hotel"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-8ca57e4712d0be21acad" style="width:480px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8ca57e4712d0be21acad">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[52.478062,-1.91051,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The ICC",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[52.476551,-1.91255,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Leonardo Royal Hotel",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[52.476551,52.478062],"lng":[-1.91255,-1.91051]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-e6590952236f0dadc505" style="width:100%;height:650px;"></div>
+<script type="application/json" data-for="htmlwidget-e6590952236f0dadc505">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[52.478062,-1.91051,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The ICC",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[52.476551,-1.91255,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Leonardo Royal Hotel",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[52.476551,52.478062],"lng":[-1.91255,-1.91051]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
@@ -198,6 +268,31 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>df <span class="ot">&lt;-</span> kableExtra<span class="sc">::</span><span class="fu">kbl</span>(tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb2-2"><a></a>  <span class="sc">~</span>Time, <span class="sc">~</span>Title, <span class="sc">~</span>Speaker,</span>
+<span id="cb2-3"><a></a>  <span class="st">"09:45 – 09:55"</span>, <span class="st">"Welcome and Housekeeping"</span>, <span class="st">"Zoë Turner"</span>,</span>
+<span id="cb2-4"><a></a>  <span class="st">"09:55 – 10:20"</span>, <span class="st">"RAPping my head against a databricks wall"</span>, <span class="st">"Louise Schreuders"</span>,</span>
+<span id="cb2-5"><a></a>  <span class="st">"10:20 – 10:35"</span>, <span class="st">"Reducing mental health inequalities among the BAME residents of Herefordshire and Worcestershire communities"</span>, <span class="st">"Oluwatimilehin Olabamiyo"</span>,</span>
+<span id="cb2-6"><a></a>  <span class="st">"10:35 – 11:00"</span>, <span class="st">"Simplifying development of AI applications integrated in EHRs with Health Chain"</span>, <span class="st">"Jennifer Jiang-Kells"</span>,</span>
+<span id="cb2-7"><a></a>  <span class="st">"11:00 – 11:15"</span>, <span class="st">"Beyond the dashboard: R for value added insights"</span>, <span class="st">"Nicola Farthing"</span>,</span>
+<span id="cb2-8"><a></a>  <span class="st">"11:45 – 12:00"</span>, <span class="st">"Reimagining NHS dashboards: an open-source approach with plotly-dash"</span>, <span class="st">"Jennifer Struthers"</span>,</span>
+<span id="cb2-9"><a></a>  <span class="st">"12:00 – 12:25"</span>, <span class="st">"Using Machine Learning and secondary care activity data to identify risk of cancer earlier"</span>, <span class="st">"Scarlett Kynoch"</span>,</span>
+<span id="cb2-10"><a></a>  <span class="st">"12:25 – 12:40"</span>, <span class="st">"The patient does not exist – generating synthetic patient data with Wasserstein GAN"</span>, <span class="st">"Simon Newey"</span>,</span>
+<span id="cb2-11"><a></a>  <span class="st">"12:40 – 13:05"</span>, <span class="st">"Streamlining machine learning development at the NHS via open-source tools"</span>, <span class="st">"Elias Altrabsheh and James Sibbit"</span>,</span>
+<span id="cb2-12"><a></a>  <span class="st">"13:05 – 13:07"</span>, <span class="st">"rainbowR"</span>, <span class="st">"Ella Kaye"</span>,</span>
+<span id="cb2-13"><a></a>  <span class="st">"13:55 – 14:10"</span>,</span>
+<span id="cb2-14"><a></a>  <span class="st">"What insights did Glasgow Scottish Ambulance Service (SAS) gain from combining multiple data sources about all chest pain patients from 2023? We'll present about the process and findings of a 1-year long MSc dissertation project."</span>, <span class="st">"Katalin Koszegi"</span>,</span>
+<span id="cb2-15"><a></a>  <span class="st">"14:10 – 14:25"</span>,</span>
+<span id="cb2-16"><a></a>  <span class="st">"Predictive Modelling for health and social care capacity planning using open data"</span>, <span class="st">"Sebastian Fox"</span>,</span>
+<span id="cb2-17"><a></a>  <span class="st">"14:25 – 14:50"</span>, <span class="st">"To explain or predict: how different modelling objectives change how you use the same tools"</span>, <span class="st">"Chris Mainey"</span>,</span>
+<span id="cb2-18"><a></a>  <span class="st">"14:50 – 15:05"</span>, <span class="st">"Using Openxlsx2 to automate excel publications"</span>, <span class="st">"Ruth Keane"</span>,</span>
+<span id="cb2-19"><a></a>  <span class="st">"15:35 – 15:50"</span>, <span class="st">"What I learnt about (programming) languages by building bilingual websites"</span>, <span class="st">"Rosemary Walmsley"</span>,</span>
+<span id="cb2-20"><a></a>  <span class="st">"15:50 – 16:15"</span>, <span class="st">"Leveraging R to implement novel theoretical development in online ‘digital twin’ simulation modelling"</span>, <span class="st">"Richard Wood"</span>,</span>
+<span id="cb2-21"><a></a>  <span class="st">"16:15 – 16:30"</span>, <span class="st">"Should I use your package"</span>, <span class="st">"Colin Gillespie"</span>,</span>
+<span id="cb2-22"><a></a>  <span class="st">"16:30 – 16:45"</span>, <span class="st">"Cracking open the TiN: how we build a one-stop statistics website using R, GitHub and BigQuery"</span>, <span class="st">"Mohan Del"</span>,</span>
+<span id="cb2-23"><a></a>))</span>
+<span id="cb2-24"><a></a></span>
+<span id="cb2-25"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
 <thead>
@@ -307,6 +402,28 @@
 </div>
 <div id="tabset-1-2">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>df <span class="ot">&lt;-</span> kableExtra<span class="sc">::</span><span class="fu">kbl</span>(tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb3-2"><a></a>  <span class="sc">~</span>Time, <span class="sc">~</span>Title, <span class="sc">~</span>Speaker,</span>
+<span id="cb3-3"><a></a>  <span class="st">"09:45 – 09:55"</span>, <span class="st">"Welcome and Housekeeping"</span>, <span class="st">"Zoë Turner"</span>,</span>
+<span id="cb3-4"><a></a>  <span class="st">"09:55 – 10:20"</span>, <span class="st">"The Reusability Crisis in Healthcare Analytics"</span>, <span class="st">"Rhian Davies"</span>,</span>
+<span id="cb3-5"><a></a>  <span class="st">"10:20 – 10:35"</span>, <span class="st">"Shift staffing via task load prediction"</span>, <span class="st">"Marcos Fabietti"</span>,</span>
+<span id="cb3-6"><a></a>  <span class="st">"10:35 – 10:50"</span>, <span class="st">"Unleashing the power of pathway simulation"</span>, <span class="st">"Sammi Rosser"</span>,</span>
+<span id="cb3-7"><a></a>  <span class="st">"11:15 – 11:40"</span>, <span class="st">"New generic tests for cancer – with R is a clinical scientists best friend"</span>, <span class="st">"Joe Shaw"</span>,</span>
+<span id="cb3-8"><a></a>  <span class="st">"11:40 – 11:55"</span>, <span class="st">"Beyond automation: a shiny app to maximise analytical impact routine reporting narrative"</span>, <span class="st">"Laura Birks"</span>,</span>
+<span id="cb3-9"><a></a>  <span class="st">"11:55 – 12:10"</span>, <span class="st">"Sharpening my Python skills through self-development of web scraping bank complaints data"</span>, <span class="st">"Kenneth Quan"</span>,</span>
+<span id="cb3-10"><a></a>  <span class="st">"12:10 – 12:25"</span>, <span class="st">"GitHub as a team sport"</span>, <span class="st">"Matt Dray"</span>,</span>
+<span id="cb3-11"><a></a>  <span class="st">"13:10 – 13:25"</span>, <span class="st">"Presenting fingertips in data in a more friendly format"</span>, <span class="st">"Rachel Brown"</span>,</span>
+<span id="cb3-12"><a></a>  <span class="st">"13:25 – 13:50"</span>, <span class="st">"A method to apply temporal graph analysis on electronic patient record data to explore healthcare professional patient interaction intensity"</span>, <span class="st">"John Booth"</span>,</span>
+<span id="cb3-13"><a></a>  <span class="st">"13:50 – 14:05"</span>, <span class="st">"Deploying a Shiny app with Docker in a Raspberry Pi"</span>, <span class="st">"Pablo León Ródenas"</span>,</span>
+<span id="cb3-14"><a></a>  <span class="st">"14:05 – 14:20"</span>, <span class="st">"Estimating flexible hazard rates for C diff recurrence from electronic health records using the SplinHazard Regression package and other methods in R"</span>, <span class="st">"Elisabeth Dietz"</span>,</span>
+<span id="cb3-15"><a></a>  <span class="st">"14:20 – 14:45"</span>, <span class="st">"Assessment of patient feedback using Natural Language Processing (NLP) and textual data analysis in R"</span>, <span class="st">"Ana Singh"</span>,</span>
+<span id="cb3-16"><a></a>  <span class="st">"15:15 – 15:40"</span>, <span class="st">"Forged in the fire: agile project management lessons from the frontline"</span>, <span class="st">"Chris Beeley"</span>,</span>
+<span id="cb3-17"><a></a>  <span class="st">"15:40 – 15:55"</span>, <span class="st">"Community Talk – Turing Way"</span>, <span class="st">"Sophia Batchelor"</span>,</span>
+<span id="cb3-18"><a></a>  <span class="st">"15:55 – 16:05"</span>, <span class="st">"Community Talk -NHS.Pycom"</span>, <span class="st">"Alex Cheung"</span>,</span>
+<span id="cb3-19"><a></a>  <span class="st">"16:05 – 16:15"</span>, <span class="st">"Closing talk NHS-R Community and raffle"</span>, <span class="st">"Zoë Turner"</span>,</span>
+<span id="cb3-20"><a></a>))</span>
+<span id="cb3-21"><a></a></span>
+<span id="cb3-22"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top" data-quarto-postprocess="true">
 <thead>
@@ -513,10 +630,10 @@
 </div><div class="column" style="width:50%;">
 <p><img data-src="fig/rap.png"></p>
 </div></section>
-<section id="rapping-your-head-around-the-idea" class="slide level2">
-<h2>RAPping your head around the idea</h2>
+<section id="rapping" class="slide level2">
+<h2>RAPping</h2>
 <div class="fragment semi-fade-out">
-<p><img data-src="fig/eninem.gif" class="absolute" style="left: 30px; bottom: 0px; "></p>
+<p><img data-src="fig/eninem.gif" class="absolute" style="top: 0px; right: 0px; "></p>
 </div>
 <div class="fragment fade-in">
 <div class="cell" data-reveal="true" data-layout-align="default">
@@ -531,9 +648,10 @@
   C --&gt; E(PDF)
   F{Quality Assurance} --&gt; B 
   F --&gt; C
+  H{Quality Assurance} --&gt; E
   E --&gt; G[Published]
 
-  subgraph Loop["Repeat every time the data / analysis changes"]
+  subgraph Loop["Repeat every time &lt;br&gt; data or analysis changes"]
     B
     C
     D
@@ -578,7 +696,9 @@
 </section>
 <section id="but-why-bother" class="slide level2">
 <h2>But why bother?</h2>
+<div class="r-fit-text">
 <p><a href="https://www.hdruk.ac.uk/helping-with-health-data/the-sudlow-review/" data-preview-link="true" style="text-align: center"><strong>The Sudlow Review</strong>: ‘Uniting the UK’s Health Data: A Huge Opportunity for Society’</a> <br> an independent review commissioned by the Chief Medical Officer for England, the UK National Statistician and NHS England’s National Director for Transformation.</p>
+</div>
 <div class="fragment fade-in">
 <div style="background-color: #eaeaea">
 <p><em>Stakeholders’ highest priorities for improvements…in the health data ecosystem… <br> - <strong>Improve data usability</strong>: the implementation of open, shareable and reproducible approaches to data management, curation and analysis pipelines will drive transparency and efficiency, and reduce duplication of effort</em></p>
@@ -587,7 +707,9 @@
 </section>
 <section id="but-why-bother-1" class="slide level2">
 <h2>But why bother?</h2>
+<div class="r-fit-text">
 <p><a href="https://www.gov.uk/government/publications/better-broader-safer-using-health-data-for-research-and-analysis"><strong>Better, broader, safer</strong>: using health data for research and analysis</a> <br> review into how the efficient and safe use of health data for research and analysis can benefit patients.</p>
+</div>
 <div class="fragment fade-in">
 <div style="background-color: #eaeaea">
 <p><em>Summary recommendations <br> 7. Promote and resource ‘Reproducible Analytical Pathways’ as the <strong>minimum standard</strong> for academic and NHS data analysis: this will produce high quality, shared, reviewable, re-usable, well-documented code for data curation and analysis; minimise inefficient duplication; avoid unverifiable ‘black box’ analyses; and make each new analysis faster.</em></p>
@@ -824,44 +946,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
