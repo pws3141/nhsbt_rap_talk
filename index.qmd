@@ -7,6 +7,9 @@ date-format: "MMM D, YYYY"
 format:
   revealjs:
     footer: "<https://www.nhsbt.nhs.uk/>"
+execute:
+  echo: false
+  warning: false
 logo: https://nhsbtdbe.blob.core.windows.net/umbraco-assets-corp/3760/nhsbt-left-align_scaled.svg
 brand: _brand.yml
 editor: source
