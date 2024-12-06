@@ -7,8 +7,6 @@ date-format: "MMM D, YYYY"
 format:
   revealjs:
     footer: "<https://www.nhsbt.nhs.uk/>"
-title-slide-attributes: 
-  data-background-color: "#43464B"
 logo: https://nhsbtdbe.blob.core.windows.net/umbraco-assets-corp/3760/nhsbt-left-align_scaled.svg
 brand: _brand.yml
 editor: source
@@ -193,10 +191,11 @@ Key ideas of RAP:
 ![](fig/rap.png)
 :::
 
-## RAPping your head around the idea
+## RAPping
+
 
 ::: {.fragment .semi-fade-out}
-![](fig/eninem.gif){.absolute bottom=0 left=30}
+![](fig/eninem.gif){.absolute top=0 right=0}
 :::
 
 ::: {.fragment .fade-in}
@@ -209,9 +208,10 @@ flowchart LR
   C --> E(PDF)
   F{Quality Assurance} --> B 
   F --> C
+  H{Quality Assurance} --> E
   E --> G[Published]
 
-  subgraph Loop["Repeat every time the data / analysis changes"]
+  subgraph Loop["Repeat every time <br> data or analysis changes"]
     B
     C
     D
@@ -244,8 +244,10 @@ This has several downsides such as:
 
 ## But why bother?
 
+:::{.r-fit-text}
 [**The Sudlow Review**: 'Uniting the UK’s Health Data: A Huge Opportunity for Society'](https://www.hdruk.ac.uk/helping-with-health-data/the-sudlow-review/){preview-link="true" style="text-align: center"} <br/>
 an independent review commissioned by the Chief Medical Officer for England, the UK National Statistician and NHS England’s National Director for Transformation.
+:::
 
 ::: {.fragment .fade-in}
 :::: {style="background-color: #eaeaea"}
@@ -257,8 +259,10 @@ an independent review commissioned by the Chief Medical Officer for England, the
 
 ## But why bother?
 
+:::{.r-fit-text}
 [**Better, broader, safer**: using health data for research and analysis](https://www.gov.uk/government/publications/better-broader-safer-using-health-data-for-research-and-analysis) <br/>
 review into how the efficient and safe use of health data for research and analysis can benefit patients.
+:::
 
 ::: {.fragment .fade-in}
 :::: {style="background-color: #eaeaea"}
