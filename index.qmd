@@ -1,12 +1,12 @@
 ---
 title: NHS R Conference
-subtitle: This is a subtitle
+subtitle: What was it about?
 author: "[Paul Smith](mailto:paul.smith9@nhsbt.nhs.uk)"
 date: 2024-12-09
 date-format: "MMM D, YYYY"
 format:
   revealjs:
-    footer: "<https://www.nhsbt.nhs.uk/>"
+    footer: "<https://www.odt.nhs.uk/>"
 execute:
   echo: false
   warning: false
@@ -43,6 +43,59 @@ leaflet() %>%
 - mostly short 15 minute presentations 
 - mixture of implementing statistical methods and data pipeline
 :::
+
+## But why R? {.smaller auto-animate=true}
+
+::: {.incremental}
+- Open source: free and large community to learn from
+- Big presence on GitHub:
+  - large community to learn, share code
+  - lots of NHS organisations already there: we can work with them
+- Better (and easier) data visualisation
+- Quarto / Rmarkdown allows very easy integration of comments, codes and visualisations
+  - can output to html, pdf and word all from one document
+:::
+
+## But why R? {.smaller auto-animate=true}
+- Quarto / Rmarkdown allows very easy integration of comments, codes and visualisations
+  - can output to html, pdf and word all from one document
+  
+![](./fig/rstudio-hello.png){fig-align="center"}
+
+## But why R?
+
+::: {.fragment .fade-in}
+![](./fig/sas_streamchart.jpg){fig-align="center"}
+:::
+
+## But why R?
+
+
+```{r}
+#| cache: true
+
+# Libraries
+library(tidyverse)
+library(babynames)
+library(streamgraph)
+```
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| cache: true
+#| code-line-numbers: "|7-9"
+# filter dataset
+data <- babynames %>%
+  filter(name %in% c("Ashley", "Amanda", "Jessica",    "Patricia", "Linda", "Deborah",   "Dorothy", "Betty", "Helen")) %>%
+  filter(sex=="F")
+
+# plot
+data %>%
+  streamgraph(key="name", value="n", date="year") %>%
+  sg_fill_brewer("BuPu")
+```
+
 
 ## The Talks {.smaller .scrollable}
 
@@ -276,7 +329,7 @@ review into how the efficient and safe use of health data for research and analy
 
 ## Some reading {.smaller}
 
-- NHS Digital [RAP website](https://nhsdigital.github.io/rap-community-of-practice/), including information on different ['RAP levels'](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/)
+- NHS Digital [RAP website](https://nhsdigital.github.io/rap-community-of-practice/), including information on different ['RAP levels'](https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/levels_of_RAP/){preview-link="true" style="text-align: center"}
 - NHS England [blog post](https://digital.nhs.uk/blog/data-points-blog/2023/why-were-getting-our-data-teams-to-rap)
 - Government Analysis Function [RAP strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/)
 - Government Data Science [RAP Companion](https://ukgovdatascience.github.io/rap_companion/)
