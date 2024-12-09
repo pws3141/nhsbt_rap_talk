@@ -6,7 +6,7 @@ date: 2024-12-09
 date-format: "MMM D, YYYY"
 format:
   revealjs:
-    footer: "<https://www.odt.nhs.uk/>"
+    footer: "<https://pws3141.github.io/nhsbt_rap_talk/>"
 execute:
   echo: false
   warning: false
