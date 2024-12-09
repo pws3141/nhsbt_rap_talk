@@ -7,6 +7,34 @@
     "text": "Some information\n\n\n\n\n\n\n\n\n\n\n\n\n\norganised by NHS-R Community and NHS.pycom\nmostly short 15 minute presentations\nmixture of implementing statistical methods and data pipeline"
   },
   {
+    "objectID": "index.html#but-why-r",
+    "href": "index.html#but-why-r",
+    "title": "NHS R Conference",
+    "section": "But why R?",
+    "text": "But why R?\n\n\nOpen source: free and large community to learn from\nBig presence on GitHub:\n\nlarge community to learn, share code\nlots of NHS organisations already there: we can work with them\n\nBetter (and easier) data visualisation\nQuarto / Rmarkdown allows very easy integration of comments, codes and visualisations\n\ncan output to html, pdf and word all from one document"
+  },
+  {
+    "objectID": "index.html#but-why-r-1",
+    "href": "index.html#but-why-r-1",
+    "title": "NHS R Conference",
+    "section": "But why R?",
+    "text": "But why R?\n\nQuarto / Rmarkdown allows very easy integration of comments, codes and visualisations\n\ncan output to html, pdf and word all from one document"
+  },
+  {
+    "objectID": "index.html#but-why-r-2",
+    "href": "index.html#but-why-r-2",
+    "title": "NHS R Conference",
+    "section": "But why R?",
+    "text": "But why R?"
+  },
+  {
+    "objectID": "index.html#but-why-r-3",
+    "href": "index.html#but-why-r-3",
+    "title": "NHS R Conference",
+    "section": "But why R?",
+    "text": "But why R?\n\n\nCode\n# filter dataset\ndata &lt;- babynames %&gt;%\n  filter(name %in% c(\"Ashley\", \"Amanda\", \"Jessica\",    \"Patricia\", \"Linda\", \"Deborah\",   \"Dorothy\", \"Betty\", \"Helen\")) %&gt;%\n  filter(sex==\"F\")\n\n# plot\ndata %&gt;%\n  streamgraph(key=\"name\", value=\"n\", date=\"year\") %&gt;%\n  sg_fill_brewer(\"BuPu\")"
+  },
+  {
     "objectID": "index.html#the-talks",
     "href": "index.html#the-talks",
     "title": "NHS R Conference",
